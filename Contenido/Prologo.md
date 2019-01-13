@@ -1,5 +1,5 @@
 # Prologo
-Antes de empezar hay que aclarar un par de cosas.
+![picture alt](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/GQL_01.png "Qué es GraphQL?")
 ## Qué es GraphQL ?
 Es un lenguaje de consultas.
 ## En qué se usa ?
@@ -16,3 +16,15 @@ En la gran mayoria de tutoriales que hay se usa junto a React, peor no es parte 
 ## Es para JS, o qué?
 En muchos lugares al leer la descripción dice ser que funciona con cualquier lenguaje de programación y en cualquier ambiente.
 La realidad es que funciona en muchos lenguajes, con muchos frameworks.
+## Terminología
+Algunos terminos de GraphQL.
+* __Query__ = son las consultas, seria un GET de una REST
+* __Mutation__ = son las modificaciones, seria POST/PUT/PATH/DELETE de una REST
+* __Schema__ = es donde se definen las operaciones/funciones que se van a poder hacer (los tipos de Queries y Mutations) y los modelos de los datos a buscar y obtener, al ser un lenguaje Tipado se necesita especificar como se forman los objetos.
+* __Resolvers__ = es la parte lógica, donde y como conectar a la base de datos y como buscar o modificar, y que valores devolver.
+## Links
+* [Pagina Principal](https://graphql.org/)
+* [en Facebook](https://www.facebook.com/groups/graphql.community/)
+* [en Twiiter](https://twitter.com/GraphQL) / [#GraphQL](https://twitter.com/search?q=%23GraphQL&src=tyah)
+* [Tag de StackOverflow](https://stackoverflow.com/questions/tagged/graphql)
+* [en Wikipedia](https://en.wikipedia.org/wiki/GraphQL)
