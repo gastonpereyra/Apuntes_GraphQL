@@ -32,4 +32,4 @@ Algunos terminos de GraphQL.
 * [en Wikipedia](https://en.wikipedia.org/wiki/GraphQL)
 - - - -
 [<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
-[<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/contenido/playground_query.md)
+[<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_query.md)
