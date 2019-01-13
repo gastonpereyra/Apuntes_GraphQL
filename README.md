@@ -8,7 +8,7 @@ A veces, siempre que pueda, con capturas de pantalla del momento, y links.
 ## Entonces esto es ...  :question:
 Esto no pretende ser ni una guía ni un curso, es tal vez una demostración de cosas que pude hacer.
 ## Para qué ?  :hushed:
-Para que cualquiera que tenga curiosidad sobre este mismo pueda darle un vistazo, si se anima replicar lo que yo hice, mejorarlo.
+Para que cualquiera que tenga curiosidad sobre este mismo tema pueda darle un vistazo, si se anima replicar lo que yo hice, mejorarlo.
 También para que quien ya conocé del tema o que hizo las cosas diferentes pueda corregir, agregar, o compartir mas material. Siempre son Bienvenidos a aportar.
 ## De donde surgió la idea ?  :bulb:
 Esto surge de la propuesta [#DailyStandUp](https://www.facebook.com/hashtag/dailystandup?source=feed_text&epa=HASHTAG) del grupo (o club) de Facebook [Podemos Aprender](https://www.facebook.com/groups/571508276552938/), como no podía grabar un video (no tengo experiencia ni micrófono y otras cosas) para mostrar algo de lo que estaba haciendo subí unas imagenes con algo de explicación sobre que se trata o como lo hice, para que no se pierda, pero sobre todo para que no se me pierda a mí, decidí ordenarlo y este me pareció un lugar apropiado, y mantenerlo actualizado lo más frecuente que pueda.
