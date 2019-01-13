@@ -16,6 +16,8 @@ En la gran mayoria de tutoriales que hay se usa junto a React, peor no es parte 
 ## Es para JS, o qué?
 En muchos lugares al leer la descripción dice ser que funciona con cualquier lenguaje de programación y en cualquier ambiente.
 La realidad es que funciona en muchos lenguajes, con muchos frameworks.
+Aca pueden encontrar una lista de lenguajes soportados junto a diferentes librerias populares
+<https://graphql.org/code/>
 ## Terminología
 Algunos terminos de GraphQL.
 * __Query__ = son las consultas, seria un GET de una REST
@@ -28,3 +30,6 @@ Algunos terminos de GraphQL.
 * [en Twiiter](https://twitter.com/GraphQL) / [#GraphQL](https://twitter.com/search?q=%23GraphQL&src=tyah)
 * [Tag de StackOverflow](https://stackoverflow.com/questions/tagged/graphql)
 * [en Wikipedia](https://en.wikipedia.org/wiki/GraphQL)
+- - - -
+[<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
+[<kbd>Siguiente</kbd>]()
