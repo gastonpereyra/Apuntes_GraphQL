@@ -14,5 +14,9 @@ También para que quien ya conocé del tema o que hizo las cosas diferentes pued
 Esto surge de la propuesta [#DailyStandUp](https://www.facebook.com/hashtag/dailystandup?source=feed_text&epa=HASHTAG) del grupo (o club) de Facebook [Podemos Aprender](https://www.facebook.com/groups/571508276552938/), como no podía grabar un video (no tengo experiencia ni micrófono y otras cosas) para mostrar algo de lo que estaba haciendo subí unas imagenes con algo de explicación sobre que se trata o como lo hice, para que no se pierda, pero sobre todo para que no se me pierda a mí, decidí ordenarlo y este me pareció un lugar apropiado, y mantenerlo actualizado lo más frecuente que pueda.
 - - - -
 ## Contenido  :book:
+- Introducción
 1. [Prologo](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Prologo.md) / Qué es GraphQL ?
-2. [Herramientas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Herramientas.md)
+- Playgrounds
+2. [Query](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_query.md) / GraphQLHub
+- Otros
+3. [Herramientas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Herramientas.md)
