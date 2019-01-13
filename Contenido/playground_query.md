@@ -146,6 +146,6 @@ Si ponemos `!` lo hacemos obligatorio.
 Para usar las variables, abajo a la Izquierda hay otro editor de texto, usando notación JSON, pasamos las variables.
 
 - - - -
-[<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/contenido/prologo.md)
+[<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/contenido/Prologo.md)
 [<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
 [<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/contenido/)
