@@ -12,6 +12,8 @@
  ## Playgrounds
  * [GraphQLHub](https://www.graphqlhub.com/playground)
  * [FakerQL](https://fakerql.com/) / [Repo](https://github.com/notrab/fakerql)
+ ## Project Management Tools
+ * [Glitch](https://glitch.com/)
  ## Otros
  * [Markdown - CheatSheet](https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md)
  * [Lista de API](https://github.com/APIs-guru/graphql-apis?fbclid=IwAR0cWZS2dpO5ruF2O3CyXx9um6X82Q0h_taFVNQvU9F50AQzwJ70_j9gt5A)
