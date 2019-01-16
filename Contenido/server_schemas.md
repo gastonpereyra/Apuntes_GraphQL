@@ -1,10 +1,28 @@
 # Empezando un Server
 
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/CumpleQL.png" width="900">
+
 Antes una aclaración: [No mas Playgrounds](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_no_mas.md)
 
 Vamos a avanzar y armar nuestro server, armar nuestros schemas, nuestros resolvers. De esta manera podemos dar un paso más a tener nuestra app funcional.
 
-Hagamos algo simple primero, armemos una pequeña API que busque los meses del año por ID, por nombre o cantidad de dias, que ademas pueda guardar quienes cumplen años.
+Hagamos algo simple primero, armemos una pequeña API.
+
+## API
+
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/server_api.png">
+
+Que va a hacer:
+* Buscar los meses del años por ID, o por nombre. Y mostrarlos.
+* Buscar los meses del año por cantidad de Dias, y mostrar todos los que cumplan.
+* Mostrar una lista de nombres de personas que cumplan años esos meses.
+* Agregar a la lista de nombres uno nuevo.
+
+## Como lo va hacer
+
+Por el front-end no nos preocupemos por ahora, podemos usar una herramienta que nos da GraphQL llamada **GraphiQL** para Express. Ya le hemos usado antes en por ejemplo **GraphQLHub**.
+
+Para el Back-end voy a usar un servidor Node.js con Express, nada complicado.
 
 ## Configuración Inicial
 
@@ -15,7 +33,7 @@ npm init
 ```
 
 Completan todos los campos, como se hace habitualmente.
-Voy a usar sintaxis ES2015+ de JS, asi que voy a usar Babel por lo que instalamos un par de paquetes en las dependencias de desarrollo
+Voy a usar sintaxis ES2015+ de JS, asi que voy a usar Babel por lo que instalamos un par de paquetes en las dependencias de desarrollo.
 
 ```
 npm install --save-dv babel-cli babel-preset-env babel-preset-stage-0
@@ -55,7 +73,7 @@ Quedaria algo asi:
 <img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/server_node.png" width="500">
 
 Por supuesto creamos el archivo `server.js`, configuramos Express de manera basica para poner el servido escuchando, en Glitch ya esta hecho.
-Despues volveremos a retocar el arhivo
+Despues volveremos a retocar el arhivo pero dejo un vistazo basico, no es la versión final.
 
 ```javascript
 // Express
@@ -103,32 +121,88 @@ Nos deberia quedar algo asi:
 
 <img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/server_directorio.png">
 
+Aca tendriamos la estructura basica del directorio.
+
 ## Armar los Schemas
 
-Hay varias formas de armarlos, o bien podemos hacer dentro del archivo `.js` o por separado usando un archivo `.graphql` o `.gql`.
+Para armar los Schemas podemos elegir 2 maneras.
 
-En ambos casos necesitamos importar de graphql una funcion:
+1. hacerlo todo en un archivo javascript.
+2. dividir la sintaxis propia de graphQL en un archivo y la parte javascript en otro.
+
+No son tan diferentes al final.
+
+### 1. Todo en JS
+
+Vamos a necesitar una función de graphQL asi que la importamos
 
 `import { buildSchema } from 'graphql';`
 
-Si usamos un archivos `.graphql` / `.gql`:
+Con esto vamos a hacer que los Schemas esten listos para ser usados.
+
+Para escribir los Schemas creamos una variable, llamemosla `types`, su contenido va a ser sintaxis de GrahpQL, pero para que funciona lo vamos a encerrar usando el acento grave.
+
+```
+const types= `
+    type Query = {
+        buscar(id: ID): String
+    }
+`;
+```
+
+En nuestro caso necesitamos modelar los Tipos que se van a usar.
+
+Necesitamos un **MES**, que tenga un `id`, un `nombre`, cantidad de `dias` , y una lista de quienes cumplen años, digamos un array `cumple`. Podemos NO, debemos modelar los datos que tenemos en `data/data.js`. Entonces 
+
+* `id: ID`
+* `nombre: String`
+* `dias: Int`
+* `cumple: [String]`
+
+También necesitamos modelar los Query y Mutation. Por ahora no es neceario poner como se consigue los resultados sino que necesita y que devuelve, ademas del nombre de las funciones.
+
+Para los query necesitamos:
+
+* `mes(id: ID, nombre: String, dias: Int): [Mes]` / no necesitamos parametros obligatorios porque se podria buscar por unos o por otros, por ejemplo buscar el nombre del mes para saber el ID, o buscar cuales meses tienen 30 dias y por esta razón lo mejor es que devuelva una array de *Mes*
+
+Para el Mutation necesitamos agregar nombres de Personas a la lista de los meses:
+
+* `cumple(id: ID!, nombre: String!): Mes` / en este caso el ID del mes y tiene que ser obligatorio sino no sabemos donde agregar, el nombre de la persona también obligatorio sino no tenemos que guardar.
+
+Ya tenemos armado nuestros Schemas, no es complicado, pero podemos hacerlo mas complejo si tenemos mas funciones, con mas campos, anidados, y otro monton de cosas más, pero no es dificil, solo tenemos que tener en cuenta que tipo de datos usamos, y lo que vamos a hacer.
+
+Por ultimo necesitamos convertir este texto a datos utiles y para usamos la función que importamos.
+
+`export const schemaConJS = buildSchema(types);`
+
+Y si lo exportamos para que pueda ser usado en el server.
+
+### 2. Dividimos entre JS y GRAPHQL
+
+Para este caso usamos un archivo adicional cuya extensión puede ser `.graphql` o `.gql`, en facebook usan la primera pero muchos usan la segunda, es lo mismo.
+
+La diferencia con el caso anterior es que en vez de encerrar al codigo en GraphQL entre acentos graves, lo ponemos en este nuevo archivo. Pero lo necesitamos llevar al archivo javascript, como lo hacemos?
 
 `import { importSchema } from 'graphql-import';`
 
-Solo con JS lo que hacemos es encerrar el texto con la sintaxis GrahpQL para definir schemas en con ```.
+Esa función nos va a ayudar. 
 
-En cambio de la otra forma no encerramos el texto, lo dejamos asi, pero en el archivo `schemas.js` lo convertimos con `importSchema(DIR)`.
-`DIR` es el path desde el root de la app hasta el archivo `.grahpql`.
+`const types2 = importSchema(grahpql/schemas.graphql);`
 
-De Cualquier forma lo guardamos en una variable que llamaramos `type`-
+Creamos una variable, importamos el archivo, no importa donde este llamada la función el parametro debe ser la **ruta relativa hacia el archivo desde el root de la app**. 
 
-Finalmente usamos `buildSchema(type)` y lo exportamos para usarla en `server.js`
+Finalmente usamos y exportamos
+
+`export const schemaConGQL = buildSchema(types2);`
 
 Pueden ver los archivos 
 * [schemas.js](https://github.com/gastonpereyra/Apuntes_GraphQL/tree/master/src/schemas.graphql)
 * [schemas.graphql](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/src/schemas.js)
 
-Sigamos, hagamos los Resolvers.
+## Avanzando
+
+Falta hacer los resolvers para que esto funcione, e iniciar GraphiQL para poder hacer las consultas, vamos por eso..
+
 - - - -
 [<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_mutation.md)
 [<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
