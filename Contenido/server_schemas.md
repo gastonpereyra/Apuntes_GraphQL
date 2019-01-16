@@ -107,13 +107,16 @@ Nos deberia quedar algo asi:
 
 Hay varias formas de armarlos, o bien podemos hacer dentro del archivo `.js` o por separado usando un archivo `.graphql` o `.gql`.
 
-En ambos casos necesitamos importar de graphql una funcion
+En ambos casos necesitamos importar de graphql una funcion:
+
 `import { buildSchema } from 'graphql';`
 
-Si usamos un archivos `.graphql` / `.gql`
+Si usamos un archivos `.graphql` / `.gql`:
+
 `import { importSchema } from 'graphql-import';`
 
-Solo con JS lo que hacemos es encerrar el texto con la sintaxis GrahpQL para definir schemas en con `.
+Solo con JS lo que hacemos es encerrar el texto con la sintaxis GrahpQL para definir schemas en con ```.
+
 En cambio de la otra forma no encerramos el texto, lo dejamos asi, pero en el archivo `.js` lo convertimos con `importSchema(DIR)`.
 `DIR` es el path desde el root del archivo `.grahpql`.
 
