@@ -1,0 +1,12 @@
+type Mes {
+    id: ID
+    nombre: String
+    dias: Int
+    cumple: [String]
+}
+type Query {
+    mes(id: ID, nombre: String, dias: Int): [Mes]
+}
+type Mutation {
+    cumple(id: ID!, nombre: String!): Mes
+}
