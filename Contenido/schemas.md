@@ -81,9 +81,21 @@ type Mutation {
   agregar(id: ID!): Otro_Objeto
 }
 ```
+## Otros
+
+Existen otrto tipo, y variantes
+* Interfaces
+* Union
+* Input
+
+Vale destacar que los Input se declaran usando `input` en vez de `type` y sirven para pasar objectos como parametros en las funciones.
+
+También que los campos de los objetos pueden tener parametros.
+
+Para ampliar sobre esto vean la documentación
+
 
 - - - -
 [<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_schemas.md)
 [<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
-[<kbd>Resolvers</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/contenido/resolvers.md)
 
