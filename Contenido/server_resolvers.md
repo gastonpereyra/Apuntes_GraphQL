@@ -115,6 +115,8 @@ Funciona.. pero hará las consultas?
 
 Se los dejó a uds.. creanme a mi me resulta..
 
+PD: Solo como un dato curioso Graphical esta hecho en React, y no en una versión nueva
+
 ## Fork ? Remix ?
 
 Por ultimo les dejo el repo en Github si quieren darle un Fork o agregar algo
