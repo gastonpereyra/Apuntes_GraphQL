@@ -23,12 +23,13 @@ Esto surge de la propuesta [#DailyStandUp](https://www.facebook.com/hashtag/dail
   3. [Mutation](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_mutation.md) / FakerQL
 - Armando una API
 
-  4. Schemas y Resolvers <kbd>Proximamente</kbd>
+  4. [Armemos un server: Schemas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_schemas.md)
+  5. [Armemos un server: Resolver y GrahpiQL](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_resolvers.md)
 - REST Graph ?
 
-  5. Usar una REST API con Graph ? <kbd>Proximamente</kbd>
+  6. Usar una REST API con Graph ? <kbd>Proximamente</kbd>
 - Otros
 
-  6. [Herramientas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Herramientas.md)
+  7. [Herramientas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Herramientas.md)
 - - - -
 [<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Prologo.md)
