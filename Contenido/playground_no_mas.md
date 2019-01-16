@@ -15,4 +15,13 @@ Que necesitas para hacerlo en tu PC?
 * La terminal de tu SO.
 * Node, tenerlo instaldo en tu maquina.
 
+## En la Nube
 
+Hay muchas opciones yo voy a usar [Glitch](https://glitch.com/). Porque me resulta comodo, facil de entender y usar, ah y es gratis.
+No sabes lo que es, como usarlo, pasate y mira:
+
+<https://github.com/gastonpereyra/Apuntes_Glitch>
+
+- - - -
+[<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_schemas.md)
+[<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
