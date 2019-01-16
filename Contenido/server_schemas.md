@@ -117,8 +117,8 @@ Si usamos un archivos `.graphql` / `.gql`:
 
 Solo con JS lo que hacemos es encerrar el texto con la sintaxis GrahpQL para definir schemas en con ```.
 
-En cambio de la otra forma no encerramos el texto, lo dejamos asi, pero en el archivo `.js` lo convertimos con `importSchema(DIR)`.
-`DIR` es el path desde el root del archivo `.grahpql`.
+En cambio de la otra forma no encerramos el texto, lo dejamos asi, pero en el archivo `schemas.js` lo convertimos con `importSchema(DIR)`.
+`DIR` es el path desde el root de la app hasta el archivo `.grahpql`.
 
 De Cualquier forma lo guardamos en una variable que llamaramos `type`-
 
@@ -128,7 +128,7 @@ Pueden ver los archivos
 * [schemas.js](https://github.com/gastonpereyra/Apuntes_GraphQL/tree/master/src/schemas.graphql)
 * [schemas.graphql](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/src/schemas.js)
 
-
+Sigamos, hagamos los Resolvers.
 - - - -
 [<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_mutation.md)
 [<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
