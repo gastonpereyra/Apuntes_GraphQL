@@ -1,5 +1,7 @@
 # Schemas
 
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/schemas.png" width="900">
+
 En los Schemas es el lugar donde se definen los objectos y funciones que se van a usar.
 
 ## Tipos
@@ -81,6 +83,23 @@ type Mutation {
   agregar(id: ID!): Otro_Objeto
 }
 ```
+
+## Descripción
+
+Es posible agregar en el código una descripción, que puede ser usado por ejemplo en una interfaz grafica para mostrar información adicional, previo a la definición de un tipo se pone:
+
+```
+""" Descripcion del Objeto """
+type Algo { 
+  """ descripcion del campo """
+  alguito: String
+ }
+```
+
+## Comentarios
+
+Para añadir comentarios en el código se usa `#` 
+
 ## Otros
 
 Existen otrto tipo, y variantes
