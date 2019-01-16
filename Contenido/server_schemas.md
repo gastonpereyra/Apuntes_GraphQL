@@ -119,7 +119,7 @@ Sigamos
 En Glitch `new File` -> `data/schemas.js`, -> `data/schemas.graphql`, -> `data/resolvers.js`
 Nos deberia quedar algo asi:
 
-<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/server_directorio.png">
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/server-directorio.png">
 
 Aca tendriamos la estructura basica del directorio.
 
