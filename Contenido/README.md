@@ -8,10 +8,19 @@
   3. [Mutation](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_mutation.md) / FakerQL
 - Armando una API
 
-  4. Schemas y Resolvers <kbd>Proximamente</kbd>
-- REST Graph ?
+  4. [Armemos un server: Schemas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_schemas.md)
+    * [Schemas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/schemas.md)
+  5. [Armemos un server: Resolver y GrahpiQL](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_resolvers.md)
+    * [Resolvers](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/resolvers.md)    
 
-  5. Usar una REST API con Graph ? <kbd>Proximamente</kbd>
+- REST + GraphQL
+
+  6.[Wrapping REST API](https://github.com/gastonpereyra/Apuntes_GraphQL/master/Contenido/wrapping.md)
+
+- Front-End
+
+  7. [Basico](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/manejando-el-front.md)
+  
 - Otros
 
-  6. [Herramientas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Herramientas.md)
+  8. [Herramientas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Herramientas.md)
