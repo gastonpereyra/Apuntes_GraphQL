@@ -122,6 +122,9 @@ El `package.json` deberia quedar algo parecido a esto:
   ]
 }
 ```
+Pueden ver el archivo: [aca](https://github.com/gastonpereyra/climaQL-server/blob/master/package.json)
+
+
 ## Schemas
 
 Cree los archivos:
@@ -161,7 +164,9 @@ Muchos de esos datos no sé lo que son, puedo intuirlos, los más interesantes s
 * `name` es el nombre de la localidad y `province` de la provincia (obvio). 
 * `lat` y `lon`, las coordenas lo vamos a usar para ubicar las personas y su cercania
 
-Y tenemos 2 datos que son Objetos `Weather` y `Forecast`. Vamos a hacerlos 
+Y tenemos 2 datos que son Objetos `Weather` y `Forecast`. Vamos a hacerlos.
+
+Empezamos con Weather.
 
 
 ```graphql
@@ -176,42 +181,73 @@ type Weather {
     id: Int 
     description: String
 }
+```
 
-""" Pronostico de la Mañana """ 
-type Morning {
-    weather_id: Int
-    description: String
+De aca vemos que podemos sacar muchos datos interesantes, algo para destacar `id` lo usan para el dibujo de que tipo de clima esta haciendo (sol, nubes, lluvia, tormenta, etc..)
+
+Sigamos con el de Forecast (pronostico)
+
+```graphql
+type Forecast {
+    _id: ID
+    timestamp: String
+    date_time: String 
+    location_id: Int
+    forecast: [Forecasts]
 }
 
-""" Pronostico de la Tarde/Noche """ 
-type Afternoon {
-    weather_id: Int
-    description: String
-}
-
-""" Pronostico Detalle """ 
 type Forecasts {
-    """ Fecha """ 
-    date: String # (YYYY-mm-DD)
-    """ Temperatura Minima / De la manaña, en °C """ 
+    date: String
     temp_min: Float
-    """ Tempertura Maxima / De la Tarde, °C) """ 
     temp_max: Float
     temp_min_sub: Float
-    temp_noc: Float # Noche?
-    """ Radiacion solar, en UV """
+    temp_noc: Float
     radiation: String 
     morning: Morning
     afternoon: Afternoon
 }
 
+type Morning {
+    weather_id: Int
+    description: String
+}
 
-""" Pronostico """
-type Forecast {
-    _id: ID
-    timestamp: String
-    date_time: String # (YYYY-mm-DD HH:MM)
-    location_id: Int
-    forecast: [Forecasts]
+type Afternoon {
+    weather_id: Int
+    description: String
 }
 ```
+
+Si leen lo que dice la documentación que hice sobre esto, aparece que los Forecasts al pedirlos por la API vienen en objeto, y lo queremos array, candiato para ser formateado en los Resolvers.
+
+Tambipen se puede ver que hay otro endpoint de la REST API original que usa estos datos asi que los vamos a traer para aprovecharlo.
+* `/forecast`
+
+## Query y Mutation
+
+En este caso no habrá mutation, no queremos guardar nada, ni actualizar.
+
+Si vamos a querer Query, se me ocurrieron un par
+* mostrar todos las estaciónes.
+* buscar por ID una estación
+* encontrar una estación por coordenadas
+* mostrar todos los pronosticos y el de una estacion por ID
+
+Pueden ser más, claro. Mas adelante la voy a seguir ampliando pero me comprometo a mantener estos sin modificaciones.
+
+Entonces hay que agregarlos
+
+```graphql
+type Query {
+  getWeatherById(id: Int!): WeatherReport
+  getWeatherByCoords(lat: Float!, lon: Float!): WeatherReport
+  getWeathers: [WeatherReport]
+  getForecast(id: Int!): Forecast
+  getForecasts: [Forecast]
+}
+```
+Terminamos la parte mas larga. El archivo completo -> [aca](https://github.com/gastonpereyra/climaQL-server/blob/master/api/schemas.graphql)
+
+Ahora vamos a `schemas.js` y agregamos para que quede listo para ser usado
+
+
