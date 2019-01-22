@@ -138,3 +138,9 @@ En Glitch pueden darle Remix
 o entrar a mirar <https://cumple-graphql.glitch.me/>
 
 # Gracias!
+
+- - - -
+
+[<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
+[<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_schemas.md)
+[<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/wrapping.md)
