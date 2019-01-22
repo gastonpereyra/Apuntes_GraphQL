@@ -155,3 +155,8 @@ Para usar las variables, abajo a la Izquierda hay otro editor de texto, usando n
 [<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Prologo.md)
 [<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
 [<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_mutation.md)
+
+- - - -
+[<kbd>Mutation</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_mutation.md)
+[<kbd>Schema</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/schemas.md.md)
+[<kbd>Resolver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/resolvers.md)
