@@ -24,10 +24,16 @@ Esto surge de la propuesta [#DailyStandUp](https://www.facebook.com/hashtag/dail
 - Armando una API
 
   4. [Armemos un server: Schemas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_schemas.md)
+    * [Schemas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/schemas.md)
   5. [Armemos un server: Resolver y GrahpiQL](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_resolvers.md)
-- REST Graph ?
+    * [Resolvers](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/resolvers.md)    
+- REST + GraphQL
+  
+  6.[Wrapping REST API]()
+- Front-End
 
-  6. Usar una REST API con Graph ? <kbd>Proximamente</kbd>
+  7. [Basico](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/manejando-el-front.md)
+  
 - Otros
 
   7. [Herramientas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Herramientas.md)
