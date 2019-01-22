@@ -118,3 +118,8 @@ Para ampliar sobre esto vean la documentación
 [<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_schemas.md)
 [<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
 
+- - - -
+[<kbd>Query</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_query.md)
+[<kbd>Mutation</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_mutation.md)
+[<kbd>Resolver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/resolvers.md)
+
