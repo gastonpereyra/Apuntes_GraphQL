@@ -179,3 +179,8 @@ Pero vemos que usar __Mutation__ no es para nada dificil y es muy similar a usar
 [<kbd>Volver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_query.md)
 [<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
 [<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/contenido/)
+
+- - - -
+[<kbd>Query</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_query.md)
+[<kbd>Schema</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/schemas.md.md)
+[<kbd>Resolver</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/resolvers.md)
