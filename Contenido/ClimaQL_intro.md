@@ -1,5 +1,15 @@
 # ClimaQL
 
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/ClimaQL_00.png" width="900">
+
+Versión Glitch:
+* <https://glitch.com/~climaql-server>
+
+Versión del Front en GitPages (el back siempre esta en Gltich):
+* <https://gastonpereyra.github.io/climaQL-server/>
+* repo: <https://github.com/gastonpereyra/climaQL-server>
+
+
 ## Qué queria hacer ?
 
 1. Queria usar una API de datos del clima, que fuera facil de usar, que no requiera de pedir claves o pagar.
@@ -23,14 +33,44 @@ Muestra la temperatura, la sensación termica, una breve descripción del estado
 
 También tiene la capacidad de ir a un playground para probar los Query, y de esta manera chequear el estado del clima mas detallado, pronosticos a varios dias, no solo de donde estas sino de todos lados.
 
-## Alcance
+## Problemas que tuve
 
-Si no habilitas la posibilidad de obtener tu Ubicación, tira una default, en mi caso pusé que sea de Capital Federal, arbitrario total.
+Para encontrar la estación una opción facil de identificar es usar el ID de cada una de ellas, para eso habia que encontrar que coordenadas corresponden a que ID.
 
-Sin entrar al playground y por ende sin saber de Graphql no se puede acceder a más datos.
+Entre las cosas que habia encontrado habia una pagina dentro del SMN que poniendo en la URL la latitud y longitud de tu lugar te devolvia un ID. Exelente pensé, después de probar un poco me di cuenta que el ID que te tiraba era generado (quien sabe como) y hacia cosas raras, en ciertas partes de capital te tiraba ID que no valian para buscar. De hecho en la pagina oficial si activaba la geolocalización me tiraba cualquier cosa.
 
-Algo que se desprende fácil no sirve fuera de Argentina. 
+Asi que lo cambié, a buscar la coordenada mas cercana, no usé las formulas matematicas para calculo exacto (que usan el radio de la tierra y esas cosas), algo simple.
+
+Algo que se desprende fácil de esto es que no sirve fuera de Argentina. 
 Si ingresamos coordenadas al azar de cualquier parte el query busca la mas cercana a esa posición.
 
+Les muestro.. 
 
+Tengo estas coordenadas de Brasil
 
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/ClimaQL_alcance_1.png"> width="900">
+
+Si voy al playground y pruebo me da un resultado asi:
+
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/ClimaQL_alcance_2.png"> width="900">
+
+## Que usé para hacerla
+
+Primero 2 herramientas principales: 
+* [Glitch](https://glitch.com) para alojar el server
+* [Github]() para guardar una versión del front y el repositorio por si quieren hacerle un fork y modificarlo.
+
+Después usé:
+* Node
+* Express
+* GrahpQL 
+* Apollo server
+* Bulma para darle un estilo al front
+
+Y por supuesto la [API del SMN](https://github.com/gastonpereyra/smnQL)
+
+BASTA, vamos a empezar
+
+- - - -
+[Inicio]()
+[Siguiente]()
