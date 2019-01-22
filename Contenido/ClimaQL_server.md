@@ -13,13 +13,13 @@ Lo que si voy a cambiar es que no voy a usar el middleware de esa vez, sino el d
 
 1. Iniciamos
 
-* Los que estan en sus maquinas
+> Los que estan en sus maquinas
 
 ```
 npm init -y
 ```
 
-* Entremos a Glitch y le damos a crear un nuevo proyecto, "hello-express".
+> Los de Glitch y le damos a crear un nuevo proyecto, "hello-express".
 
 <img src="https://raw.githubusercontent.com/gastonpereyra/Apuntes_Glitch/master/imagenes/Glitch_hello_2.png">
 
@@ -31,13 +31,13 @@ Al igual que aquella vez instalamos Babel, por las mismas razones, y configuramo
 * `babel-reset-env`
 * `babel-preset-stage-0`
 
-* En sus PC seria
+> En sus PC seria
 
 ```
 npm install --save-dv babel-cli babel-preset-env babel-preset-stage-0
 ```
 
-* En Glitch podemos usar el boton de agregar paquetes npm, o van modificamos `package.json` a mano y dejamos que cargue solo. 
+> En Glitch podemos usar el boton de agregar paquetes npm, o van modificamos `package.json` a mano y dejamos que cargue solo. 
 
 Creamos el archivo `.babelrc`, y lo configuramos
 
@@ -60,7 +60,7 @@ Vamos a usar
 * `apollo-server-express` / middleware para usar graphql en express
 * `node-fetch` / porque vamos a hacer fetch a una REST
 
-* en sus maquinas seria y esperar
+> en sus maquinas seria y esperar
 
 ```
 npm install --save nodemon
@@ -68,7 +68,7 @@ npm install --save node-fetch
 npm install --save graphql graphql-express
 npm install --save apollo-server-express
 ```
-* En Glitch o por el botón o a mano y dejarlo cargar
+> En Glitch o por el botón o a mano y dejarlo cargar
 
 4. configuramos el script 
 
@@ -132,6 +132,86 @@ Cree los archivos:
 
 Para hacer los Schemas vamos a usar esta [API](https://github.com/gastonpereyra/smnQL/tree/master/docs/api) por lo que tenemos que modelar los datos que vamos a usar de ahi.
 
-No voy a querer usar ahora TODO eso, solo me quedo con la parte del Clima Actual.
+No voy a querer usar ahora TODO eso, solo me quedo con la parte del Clima Actual, me quedó con `map_items/weather`, vemos que dato devuelve [ACA](https://github.com/gastonpereyra/smnQL/blob/master/docs/api/clima.md).
 
-Entonces 
+Estan anidados, algunos hay que formatearlos, es bueno practicar.
+
+Entonces vamos a `schemas.graphql` y empezamos armarlo:
+
+```graphql
+type WeatherReport {
+    _id : ID
+    dist : Float
+    lid : Int
+    fid : Int
+    int_number : Int
+    name : String
+    province: String
+    lat: Float
+    lon: Float
+    zoom: Int
+    updated: Int
+    weather: Weather
+    forecast: Forecast
+}
+```
+
+Muchos de esos datos no sé lo que son, puedo intuirlos, los más interesantes son 
+* `lid` y `fid` que son el ID de la estación donde se toman los datos. 
+* `name` es el nombre de la localidad y `province` de la provincia (obvio). 
+* `lat` y `lon`, las coordenas lo vamos a usar para ubicar las personas y su cercania
+
+Y tenemos 2 datos que son Objetos `Weather` y `Forecast`. Vamos a hacerlos 
+
+
+```graphql
+type Weather {
+    temp : Float
+    tempDesc: String
+    st : Float
+    humidity: Int
+    pressure: Float
+    visibility: Int
+    wind_speed: Int
+    id: Int 
+    description: String
+}
+
+""" Pronostico de la Mañana """ 
+type Morning {
+    weather_id: Int
+    description: String
+}
+
+""" Pronostico de la Tarde/Noche """ 
+type Afternoon {
+    weather_id: Int
+    description: String
+}
+
+""" Pronostico Detalle """ 
+type Forecasts {
+    """ Fecha """ 
+    date: String # (YYYY-mm-DD)
+    """ Temperatura Minima / De la manaña, en °C """ 
+    temp_min: Float
+    """ Tempertura Maxima / De la Tarde, °C) """ 
+    temp_max: Float
+    temp_min_sub: Float
+    temp_noc: Float # Noche?
+    """ Radiacion solar, en UV """
+    radiation: String 
+    morning: Morning
+    afternoon: Afternoon
+}
+
+
+""" Pronostico """
+type Forecast {
+    _id: ID
+    timestamp: String
+    date_time: String # (YYYY-mm-DD HH:MM)
+    location_id: Int
+    forecast: [Forecasts]
+}
+```
