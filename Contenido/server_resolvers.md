@@ -64,6 +64,10 @@ Si no se les ocurre como, Pueden ver el Archivo completo -> [ACA](https://github
 
 Si vamos a usar Apollo, Relay y otros esta parte va a tener modificaciones, especialmente en la parte de los parametros.
 
+Para saber mas sobre Resolvers:
+
+* [Resolvers](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/resolvers.md)
+
 ## GraphiQL
 
 Ya tenemos Schemas, tenemos Resolvers, nos falta probarlo.
