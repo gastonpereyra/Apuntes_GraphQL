@@ -28,7 +28,7 @@ Un query bastante simple, sin parametros, ni nada complicado, en el playground f
 ```json
 {
   "data": {
-    buscarBibliotecas: [
+    "buscarBibliotecas": [
       {
         "nombre": "Nacional",
         "direccion": "Agüero 2502, CABA"
