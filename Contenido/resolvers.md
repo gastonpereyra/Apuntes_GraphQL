@@ -6,7 +6,7 @@ Los resolvers son las funciones para resolver los query y mutations. PERO tambi�
 
 Supongamos que tenemos este Schema
 
-```
+```graphql
 type Biblioteca {
   id: ID
   nombre: String
@@ -42,20 +42,31 @@ Supongamos que los datos que obtenemos vienen en el siguiente formato:
 ```json
 {
   "id": "0as532357d59b0ds",
-  "nombre": "Nacional"
+  "nombre": "Nacional",
   "direccion": "Agüero 2502, CABA",
-  libros: {
+  "libros": {
     "0": {
       "id": "l0as5d8r9d6r6r4A",
-      "titulo": "Scrum y XP desde las Trincheras"
+      "titulo": "Scrum y XP desde las Trincheras",
       "cant_paginas": 122
     },
     "1": {
       "id": "l1as2W8r9d6Z2r1A",
-      "titulo": "El Silmarillion"
+      "titulo": "El Silmarillion",
       "cant_paginas": 448
     },
-    // etc..
+    "// mas libros"
   }
-}
+},
+"// mas Bibliotecas"
 ```
+
+En este caso tenemos un conflicto entre lo que modelamos en el *Schema* y lo que devolvemos, libros devuelve un array y tenemos un objeto. En estos casos podemos usar un *Resolver* para convertir ese objeto en array.
+
+## Que es un Resolver?
+
+PARA! ya lo dijiste, pero no dije todo, si siguieron el ejemplo de CumpleQL (o si lo van hacer) cuando hablo de los Resolvers evitó decir algo y lo pongo como Aclaración, lo voy a ampliar aca.
+
+Un resolver tiene un formato (en cualquier lenguaje de programación) masomenos asi:
+
+<img src="https://cdn-images-1.medium.com/max/800/1*x-1OE_wqncx22oJaW3pRkg.png">
