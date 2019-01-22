@@ -254,5 +254,5 @@ Hay más cuestiones, como problemas que surgen al usar promises, soluciones apor
 - - - -
 [<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
 [<kbd>Query</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_query.md)
-[<kbd>Mutation/kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_mutation.md)
-[<kbd>Schema/kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/schemas.md.md)
+[<kbd>Mutation</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/playground_mutation.md)
+[<kbd>Schema</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/schemas.md.md)
