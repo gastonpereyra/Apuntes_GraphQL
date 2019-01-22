@@ -196,3 +196,6 @@ Por supuesto hay que usarlos, ir viendo que otras cosas tiene para sacarle mas p
 
 - - - -
 
+[<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
+[<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/wrapping.md)
+[<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/manejando-el-front.md)
