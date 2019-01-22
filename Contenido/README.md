@@ -15,7 +15,7 @@
 
 - REST + GraphQL
 
-  6.[Wrapping REST API](https://github.com/gastonpereyra/Apuntes_GraphQL/master/Contenido/wrapping.md)
+  6. [Wrapping REST API](https://github.com/gastonpereyra/Apuntes_GraphQL/master/Contenido/wrapping.md)
 
 - Front-End
 
