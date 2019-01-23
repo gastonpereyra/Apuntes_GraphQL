@@ -1,5 +1,7 @@
 # Server Side
 
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/ClimaQL_server.png">
+
 Para la parte del server no vamos a hacer cosas tan diferentes a lo que hice en el anterior ejemplo de [CumpleQL](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/server_schemas.md), vamos a aprovechar varias cosas hechas ahi.
 
 Lo que si voy a cambiar es que no voy a usar el middleware de esa vez, sino el de **Apollo**.
@@ -460,6 +462,12 @@ Para el middleware de Apollo solo tuve que pasarle los Schemas como `typeDefs` y
 
 Ahora tenemos un endpoint `/graphql`.
 
-ESto nos da un Playground en esa dirección, y ademas podemos mandarle queries y obtener una respuesta.
+Esto nos da un Playground en esa dirección, y ademas podemos mandarle queries y obtener una respuesta desde el front.
+
+> los que estan en una pc/mac pueden iniciarlo con
+```
+npm run start
+```
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/ClimaQL_server_2.png">
 
 - - - -
