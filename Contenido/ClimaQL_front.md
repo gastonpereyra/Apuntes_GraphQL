@@ -307,6 +307,10 @@ Si es de noche se ve asi:
 
 <img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/ClimaQL_noche.png" width="900">
 
+Si hace frio:
+
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/ClimaQL_frio.png" width="900">
+
 Funciona. Se ve bien. Y tenemos la posibilidad de seguir ampliandola, lo haremos una proxima vez.
 
 
