@@ -144,7 +144,7 @@ if ($navbarBurgers.length > 0) {
 
 ### Cuerpo
 
-<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/ClimaQL_05.png" width="900">
+<img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/climaQL_05.png" width="900">
 
 Para ubicar los elementos en el cuerpo elegí poner `name` en un titulo, `province` en un subtitulo, h1 y h2 respectivamente.
 
