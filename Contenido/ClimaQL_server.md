@@ -471,3 +471,6 @@ npm run start
 <img src="https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Imagenes/ClimaQL_server_2.png">
 
 - - - -
+[<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
+[<kbd>Intro</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_intro.md)
+[<kbd>Front</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_front.md)
