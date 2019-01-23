@@ -248,6 +248,182 @@ type Query {
 ```
 Terminamos la parte mas larga. El archivo completo -> [aca](https://github.com/gastonpereyra/climaQL-server/blob/master/api/schemas.graphql)
 
+## Schemas.js
+
 Ahora vamos a `schemas.js` y agregamos para que quede listo para ser usado
 
+```javacript
+import { importSchema } from 'graphql-import';
+export const typeDefs = importSchema('./api/schemas.graphql');
+```
+
+Es similar a lo que hicimos en el ejemplo anterior, usamos importSchema para importar el archivo y lo exportamos.
+
+## Resolvers
+
+Vamos a empezar configurando lo que vamos a usar
+
+```javascript
+import fetch from 'node-fetch';
+const URL_SMNAPI = 'https://ws.smn.gob.ar/'; // Dirección de Base de la REST-API
+```
+
+Primero antes que todo tuve que resolver el tema de las coordenadas. Para eso cree esta función.
+
+```javascript
+const getClosestStation = (lat, lon, stations) => {
+  let closest = null; // index de la estación mas cercana
+  let closest_ref= null;// referencia de la diferencia entre la lat y lon a buscar y la de la estación
+
+  // Buscamos dentro de la Colección
+  const selectStation = stations.find( (station, i) => {          
+    if (closest === null) { // Si es el primer valor inicializamos
+      closest = i;
+      closest_ref= Math.abs(parseFloat(lat)-parseFloat(station.lat)) + Math.abs(parseFloat(lon)-parseFloat(station.lon));
+    }
+    else {
+        // Valores Relativos de la posicion actual y la estación
+        const new_ref = Math.abs(parseFloat(lat)-parseFloat(station.lat)) + Math.abs(parseFloat(lon)-parseFloat(station.lon));
+        // Comparamos los valores, mas cerca de 0 simultaneamente mas cerca
+        if (new_ref<closest_ref) {
+          // Cambiamos los valores de referencia
+          closest_ref = new_ref;
+          closest = i;
+      } 
+    }
+    return (closest_ref === 0) // equivalente a (station.lat === lat && station.lon === lon)
+  })
+  // Si encontró la estación la devolvemos sino la mas cercana
+  return selectStation ? selectStation : stations[closest];
+};
+```
+
+Probablemente no sea la mejor manera de resolver como buscar la estación mas cercana a una coordenada. Pero fue la mas que salió mas facil.
+
+Ahora si vamos por los Resolvers.
+
+Lo que vamos a usar, los 5 queries, y el de formateo de los Forecasts.
+
+```javascript
+export const resolvers = {
+  Query: {
+    getWeatherByCoords: (root, {lat, lon}) => // codigo
+    },
+    getWeatherById: (root, {id}) => // codigo
+    },
+    getWeathers: () => // codigo
+    },
+    getForecast: (root, {id}) => // codigo
+    },
+    getForecasts: () => // codigo
+  },
+  Forecast: {
+    forecast: (root) => // codigo
+  }
+}
+```
+
+* Vamos a resolver el de Forecast, solo debemos convertir ese objeto al array que queremos que sea.
+
+```javascript
+    forecast: ({forecast}) => Object.keys(forecast).map( key => forecast[key])
+```
+
+* Fue facil, sigamos con el de devolver todos los Climas Actuales. Tenemos que ir a buscar a la API, y traer el objeto.
+
+```javascript
+    getWeathers: () => {
+      return fetch(URL_SMNAPI+"map_items/weather")
+        .then( res => res.json())
+        .catch(error => {
+          console.log("Error Weather : "+error);
+          return [];
+        });
+    }
+```
+
+* Sigamos con uno similar, el de devolver todos los pronosticos
+
+```javascript
+    getForecasts: () => {
+      return fetch(URL_SMNAPI+"forecast")
+        .then( res => res.json())
+        .then ( (forecasts) => forecasts.map( forecast => {
+            const forecastKeys= Object.keys(forecast.forecast);
+            return ({
+              "_id": forecast._id,
+              "timestamp": forecast.timestamp,
+              "date_time": forecast.date_time,
+              "location_id": forecast.location_id,
+              "forecast": forecastKeys.map( key => forecast.forecast[key])
+            });
+        }))
+        .catch(error => {
+          console.log("Error Weather : "+error);
+          return [];
+        });
+    }
+```
+
+* Vamos a buscar una estación por ID, hacemos el pedido y filtramos
+
+```javascript
+    getWeatherById: (root, {id}) => {
+      return fetch(URL_SMNAPI+"map_items/weather")
+        .then( res => res.json())          
+        .then ( stations =>  stations.find( station => station.lid === parseInt(id) ))
+        .catch(error => {
+          console.log("Error Weather : "+error);
+          return null;
+        });
+    }
+```
+
+* Ahora por Coordenadas, usamos la función que definimos antes.
+
+```javascript
+    getWeatherByCoords: (root, {lat, lon}) => {
+      return fetch(URL_SMNAPI+"map_items/weather")
+        .then( res => res.json())          
+        .then ( stations => getClosestStation(lat,lon,stations))
+        .catch(error => {
+          console.log("Error Weather : "+error);
+          return null;
+        });
+    }
+```
+* Hacemos lo mismo con los pronosticos
+
+```javascript
+    getForecast: (root, {id}) => {
+      return fetch(URL_SMNAPI+"forecast")
+        .then( res => res.json())
+        .then ( stations => stations.find( station => station.location_id === parseInt(id) ) )
+        .then ( (forecast) => {
+          const forecastKeys= Object.keys(forecast.forecast);
+          return ({
+            "_id": forecast._id,
+            "timestamp": forecast.timestamp,
+            "date_time": forecast.date_time,
+            "location_id": forecast.location_id,
+            "forecast": forecastKeys.map( key => forecast.forecast[key])
+          });
+        })
+        .catch(error => {
+          console.log("Error Weather : "+error);
+          return [];
+        });
+    },
+```
+
+El archivo [aca](https://github.com/gastonpereyra/climaQL-server/blob/master/api/resolvers.js)
+
+## Server
+
+
+```javascript
+```
+
+```javascript
+```
 
