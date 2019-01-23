@@ -416,14 +416,50 @@ export const resolvers = {
     },
 ```
 
-El archivo [aca](https://github.com/gastonpereyra/climaQL-server/blob/master/api/resolvers.js)
+El archivo Completo [aca](https://github.com/gastonpereyra/climaQL-server/blob/master/api/resolvers.js)
+
+Haciendo esto lo que logramos fue hacer un Wrapping Rest, y ahora tenemos una REST API lista para usar como GraphQL, y no fue dificil, la mayorai de las cosas solo fueron Fetchs, y le agregamos algunas caracteristicas que originalmente no tenian.
 
 ## Server
 
+Para configurar el resto del server en Express y enchufar el Middleware, no es dificil es bastante parecido a lo anterior
 
 ```javascript
-```
+import express from 'express'; // Modulo de Express
+import { ApolloServer } from 'apollo-server-express'; // Modulo para Apollo
+import { typeDefs } from './api/schemas'; // Schemas
+import { resolvers } from './api/resolvers'; // Resolvers
 
-```javascript
-```
+// Iniciar Express
+const app = express();
 
+// Paginas Estaticas
+app.use(express.static('public'));
+app.get('/', function(request, response) {
+  response.sendFile(__dirname + '/views/index.html');
+});
+
+// Iniciar el Server de GraphQL
+const server = new ApolloServer({typeDefs, resolvers});
+server.applyMiddleware({app}); // Conectar Apollo con Express
+
+// Listo para Escuchar Request
+const listener = app.listen(process.env.PORT, function() {
+  console.log('Your app is listening on port ' + listener.address().port);
+});
+
+```
+Lo que hice fue:
+* traer los modulos correspondientes, como el de Express y Apollo
+* traer los schemas y los resolvers
+* configurar Express
+* configurar el middleware de Apollo
+* poner el servidor a escuchar
+
+Para el middleware de Apollo solo tuve que pasarle los Schemas como `typeDefs` y los `resolvers`.
+
+Ahora tenemos un endpoint `/graphql`.
+
+ESto nos da un Playground en esa dirección, y ademas podemos mandarle queries y obtener una respuesta.
+
+- - - -
