@@ -71,6 +71,15 @@ Y por supuesto la [API del SMN](https://github.com/gastonpereyra/smnQL)
 
 BASTA, vamos a empezar
 
+## ESPERA!
+
+Antes de avanzar si no leiste, talves sea lo mejor
+
+* [Sobre Resolvers](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/resolvers.md)
+* [Sobre Front-End](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/manejando-el-front.md)
+* [Sobre Wrapping](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/wrapping.md)
+
 - - - -
-[Inicio]()
-[Siguiente]()
+[<kbd>Inicio</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/README.md)
+[<kbd>Server</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_server.md)
+[<kbd>Front</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_front.md)
