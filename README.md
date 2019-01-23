@@ -30,10 +30,14 @@ Esto surge de la propuesta [#DailyStandUp](https://www.facebook.com/hashtag/dail
 
 - REST + GraphQL
   
-  6.[Wrapping REST API](https://github.com/gastonpereyra/Apuntes_GraphQL/master/Contenido/wrapping.md)
+  6. [Wrapping REST API](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/wrapping.md)
 - Front-End
 
   7. [Basico](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/manejando-el-front.md)
+- Clima QL
+  8. [INTRO](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_intro.md)
+  9. [SERVER SIDE](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_server.md)
+  10. [CLIENT SIDE](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_front.md)
   
 - Otros
 
