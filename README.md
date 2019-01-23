@@ -35,12 +35,14 @@ Esto surge de la propuesta [#DailyStandUp](https://www.facebook.com/hashtag/dail
 
   7. [Basico](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/manejando-el-front.md)
 - Clima QL
+
   8. [INTRO](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_intro.md)
   9. [SERVER SIDE](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_server.md)
   10. [CLIENT SIDE](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/ClimaQL_front.md)
   
 - Otros
 
-  8. [Herramientas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Herramientas.md)
+  11. [Herramientas](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Herramientas.md)
+  
 - - - -
 [<kbd>Siguiente</kbd>](https://github.com/gastonpereyra/Apuntes_GraphQL/blob/master/Contenido/Prologo.md)
